@@ -1,0 +1,11 @@
+package com.assignment.qa.testcases;
+
+public class WalletLoginPageTest {
+
+	
+		public WalletLoginPage() {
+		
+		super();
+		
+	}
+}

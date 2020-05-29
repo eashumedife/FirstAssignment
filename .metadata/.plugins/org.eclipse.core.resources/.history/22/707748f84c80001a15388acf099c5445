@@ -1,0 +1,55 @@
+package com.crm.qa.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.crm.qa.base.TestBase;
+
+public class LoginPage extends TestBase{
+	
+	
+	@FindBy (xpath  = "//input[@name = 'LOGIN_ID'] ")
+   
+	WebElement username ;
+	
+	
+	@FindBy (xpath = "//a[contains(text(), 'LOGIN')]")
+	
+	WebElement loginbtn ;
+	
+	
+	@FindBy (id = "nextbtn")
+	
+	WebElement nextbtn;
+	
+	@FindBy (xpath = "//input [@name  = 'PASSWORD']")
+	
+	WebElement password ;
+	
+	//@FindBy (id = "nextbtn")
+	
+	//@FindBy (xpath = "//span[contains(@class , 'Sign in']span")
+	@FindBy (xpath = "//span[contains(text(),'Sign in ')]")
+	WebElement signin;
+	
+	
+	public LoginPage() {
+		
+		PageFactory.initElements(driver, this); 
+	} 
+	
+	public HomePage LoginValidation(String UN, String Pwd) {
+		
+		loginbtn.click();
+		username.sendKeys(UN);
+		nextbtn.click();
+		password.sendKeys(Pwd);
+		signin.click();
+		
+		return new HomePage();
+		
+		
+	}
+	
+}

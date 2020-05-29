@@ -1,0 +1,29 @@
+package com.assignment.qa.testcases;
+
+import org.testng.annotations.BeforeMethod;
+
+import com.assignment.qa.base.TestBase;
+import com.assignment.qa.pages.LoginPage;
+import com.assignment.qa.pages.WalletHubLogin;
+
+public class WalletLoginPageTest extends TestBase {
+	WalletHubLogin wallethublogin;
+	
+		public WalletLoginPageTest() {
+		
+		super();
+		
+	}
+		
+		@BeforeMethod
+		
+		public void setUp() {
+			
+			
+			initializaion();
+			
+			wallethublogin = new WalletHubLogin();
+			
+			
+		}
+}

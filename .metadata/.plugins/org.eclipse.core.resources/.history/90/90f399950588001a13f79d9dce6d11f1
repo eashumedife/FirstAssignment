@@ -1,0 +1,29 @@
+package collections;
+
+import java.util.LinkedList;
+
+public class Linklist {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		LinkedList <String> ll = new LinkedList<String>();
+		ll.add("eashu");
+		
+		ll.add("heheh");
+		
+		ll.add("djnf");
+		
+		ll.add(1, "reddy");
+		
+		System.out.println(ll);
+		
+		ll.addFirst("Palla");
+		System.out.println(ll);
+		ll.addLast("QA");
+		
+		System.out.println(ll);
+	}
+
+}

@@ -1,0 +1,54 @@
+package com.assignment.qa.testcases;
+
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.assignment.qa.base.TestBase;
+import com.assignment.qa.pages.LoginPage;
+import com.assignment.qa.pages.WalletHubLogin;
+import com.assignment.qa.pages.WalletHubReviewPage;
+
+
+public class WalletLoginPageTest extends TestBase {
+	WalletHubLogin wallethublogin;
+	WalletHubReviewPage wallethubreviewpage;
+	
+		public WalletLoginPageTest() {
+		
+		super();
+		
+	}
+		
+		@BeforeMethod
+		
+		public void setUp() {
+			
+			
+			initializaion();
+	
+			driver.get(prop.getProperty("whub_url2"));
+			
+			wallethublogin = new WalletHubLogin();
+			
+			
+		}
+		
+		
+		@Test(priority =1)
+		
+		public void loginTest() {
+			
+			wallethubreviewpage = wallethublogin.signin(prop.getProperty("husername"), prop.getProperty("hpassword"));
+			
+			
+		}
+		
+		@AfterMethod 
+		
+		public void tearDown() {
+			
+			driver.quit();
+		}
+}

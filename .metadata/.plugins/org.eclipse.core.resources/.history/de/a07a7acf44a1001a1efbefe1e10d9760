@@ -1,0 +1,64 @@
+package com.assignment.qa.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.assignment.qa.base.TestBase;
+
+public class WalletHubReviewPage  extends TestBase{
+
+	
+	
+	@FindBy (xpath = "//*[contains(@class,'wh-rating rating_5')]")
+	
+	WebElement review_stars;
+	
+	@FindBy (xpath = "//*[contains(@class,'wh-rating-choices-holder')]/a[5]")
+	
+	WebElement review_4thstar;
+	
+	@FindBy (xpath = "//*[@class='dropdown-list-new']")
+	
+	WebElement select_policy;
+	
+	@FindBy (xpath = "//a[contains(@data-target,'Health')]")
+	
+	WebElement health_policy;
+	
+	
+	
+	
+	
+	public WalletHubReviewPage() {
+		
+		
+		PageFactory.initElements(driver, this);
+		
+	}
+	//Actions builder=new Actions(driver);
+	public WalletHubWriteReviewPage WalletHubProfilePage(String randomtext) throws InterruptedException {
+		
+	/*	Actions builder=new Actions(driver);
+		builder.moveToElement(review_stars);
+		builder.moveToElement(review_4thstar).click().perform();
+		select_policy.click(); */
+		
+		
+		WebElement review_stars=driver.findElement(By.xpath("//*[@onmouseover=\\\"try{gRatingsHover(this)}catch(e){}\\\"][5]"));
+		Actions builder=new Actions(driver);
+		builder.moveToElement(review_stars); Thread.sleep(2000);
+		
+		WebElement review_5th_Star=driver.findElement(By.xpath("///*[@onmouseover=\\\"try{gRatingsHover(this)}catch(e){}\\\"][5]"));
+		builder.moveToElement(review_5th_Star).click().perform();
+		
+		
+		
+		
+		return new WalletHubWriteReviewPage();
+		
+		
+	}
+}
